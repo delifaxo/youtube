@@ -9,8 +9,7 @@ import Comments from './components/comments/comments';
 
 
 
-const Api212_key ="AIzaSyCZcK7Y_8CS0XmA99idigFVzDd25YFbulc "; //test 3
-const Api22_key = "AIzaSyCN8Z0e1u_dSFhNen05muGFYIzh-gsezQU";
+
 const Api2_key = "AIzaSyBe9qwivOtTfitthysxQY7gqYIp1BDCiuc";
 const urlYoutube ="//www.youtube.com/embed/";
 
