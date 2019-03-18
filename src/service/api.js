@@ -1,5 +1,5 @@
 /* export default class Api {
-//'https://www.googleapis.com/youtube/v3/commentThreads?part=id%2Csnippet&videoId=9bZkp7q19f0&key=AIzaSyCN8Z0e1u_dSFhNen05muGFYIzh-gsezQU'
+//'https://www.googleapis.com/youtube/v3/commentThreads?part=id%2Csnippet&videoId=9bZkp7q19f0&key={}'
     _API = 'https://swapi.co/api';
   
     async getResource(value) {
