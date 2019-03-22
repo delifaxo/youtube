@@ -8,25 +8,21 @@ export default class Comments extends Component {
     if (commentsData.length === 0 || commentsData.items === undefined) {
       return (
         <div className="comments">
-        Комментарии не доступны
+          Комментарии не доступны
         </div>
       )
     }
-     else  {
+    else {
       const { items } = commentsData;
-     //   const { snippet: { topLevelComment: { snippet: { textDisplay } } } } = items[i]
-        return (
-          <div className="comments">
-         <div>
-    </div>
-    {items.map(( { snippet: { topLevelComment: { snippet: { authorDisplayName,textOriginal } } } , snippet}) => 
-     <div key = {snippet.topLevelComment.etag} className="card text-white bg-warning mb-3">
-     
-     <div    >Автор  {authorDisplayName} комментарий {textOriginal}</div></div>)}
-           
+      return (
+        <div className="comments">
+          <div>
           </div>
-        )
-      }
+          {items.map(({ snippet: { topLevelComment: { snippet: { authorDisplayName, textOriginal } } }, snippet }) =>
+            <div key={snippet.topLevelComment.etag} className="text-comments card text-white bg-warning mb-3">
+              <div>Автор {authorDisplayName} комментарий {textOriginal}</div></div>)}
+        </div>
+      )
     }
   }
-
+}

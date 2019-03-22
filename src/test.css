@@ -1,11 +1,10 @@
 ﻿.App {
-    margin: 10px;
+    margin: 5px;
     padding: 1px;
 }
 
-.search {
-    margin: 0 auto;
-    background-color: purple;
+.navbar {
+    border-radius: 5px 5px 5px 5px;
 }
 
 .text-center {
@@ -13,136 +12,77 @@
     margin-right: auto;
     margin-left: auto;
 }
+
 .videosidebar {
     position: sticky;
+    /*top: 0;*/
+}
+
+.allsidebar {
+    float: right;
+    width: 30%;
+}
+
+.insidesidebar {
+    padding: 10px 20px 10px 10px;
+    display: flex;
+}
+
+.cont3 {
+    min-height: 100%;
+    width: 70%;
+}
+
+.searchbar {
+    border-radius: 5px 5px 5px 5px;
+}
+
+.video {
+    /* border: 0.1px solid red; */
+    border-bottom: 0.1px solid red;
+    margin: 0 0px 10px 0;
+    padding: 10px;
+}
+
+.comments {
+    padding: 10px;
+}
+
+.video {
+    text-align: center;
+}
+
+.text-comments {
+
+    padding: 2.5px;
+}
+
+.video-side-text {
+    clear: both;
+
+}
+
+.iframe {
     top: 0;
-}
-.bar {
-  
-   float: right;
-   width: 30%;
-
-    padding: 10px;
-    height: 76.5vh;
-
-  
+    left: 0;
+    width: 66%;
+    height: 360px;
 }
 
-.cont3 {
-    min-height: 76.5vh;
-   
-    width: 70%;
+.card-video {
+    overflow: hidden;
 }
 
-.searchbar {
+.video-side-img {
+    min-width: 25px;
+    width: 32%;
+    float: left;
+    min-height: 40px;
+    height: auto;
+    margin: 0px;
     border-radius: 5px 5px 5px 5px;
 }
 
-.video {
-    border: 1px solid red;
-    margin: 5px;
-    padding: 10px;
-}
-.comments {
-    padding: 10px;
-}
-.divVideo {
+.text-side-bar {
     text-align: center;
 }
-.video {
-    text-align: center;
-}
-.bar img {
-    width:100px;
-     height:100px;
-     border-radius: 10px 10px 10px 10px;
-}
-.video-side-text{
-    margin-left: 10px;
-    padding: 2px;
-    
-    top:20px;
-    position: absolute;
-    left: 125px;
-    word-wrap: normal;
-    margin: auto;
-}
-.video-side-img{
-    float: left;
-}
-
-
-/*
-.App {
-    margin: 10px;
-}
-
-.search {
-    margin: 0 auto;
-    background-color: purple;
-}
-
-.text-center {
-    text-align: right;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.bar {
- 
-   float: right;
-   width: 30%;
-    padding: 10px;
-    min-height: 700px;
-    height: 100%;
-}
-
-.cont3 {
-    min-height: 700px;
-    height: 100%;
-    width: 70%;
-
-}
-
-.searchbar {
-    border-radius: 5px 5px 5px 5px;
-}
-
-.video {
-    border: 1px solid red;
-     Параметры границы 
-    margin: 5px;
-    padding: 10px;
-   Поля вокруг текста 
-
-}
-.comments {
-    padding: 10px;
-}
-.divVideo {
-    text-align: center;
-}
-.video {
-    text-align: center;
-}
-.bar img {
-    width:100px;
-     height:100px;
-     border-radius: 10px 10px 10px 10px;
-}
-.video-side-text{
-    margin-left: 10px;
-    padding: 2px;
-    position: absolute;
-    left: 110px;
-    word-wrap: normal;
-    margin: auto;
-}
-.video-side-img{
-    float: left;
-}
-
-.videosidebar {
- 
-}
-*/

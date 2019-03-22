@@ -1,37 +1,63 @@
 import React, { Component } from 'react'
-//import TestApi from '../.././api/test'
-
 
 function RenderPlayer(bodyId) {
-  console.log(bodyId)
-  if (bodyId.bodyId === "test") {
+   if (bodyId.bodyId === "test") {
     return <div>Начните поиск</div>;
   }
-else {
-  console.log("1",bodyId.bodyId)
-  return (
-    <div className="divVideo">
-    <iframe width="640" height="360" allowFullScreen="allowfullScreen"
-      mozallowfullscreen="mozallowfullscreen"
-      msallowfullscreen="msallowfullscreen"
-      oallowfullscreen="oallowfullscreen"
-      webkitallowfullscreen="webkitallowfullscreen" src ={`${bodyId.bodyId}` }   > 
-      </iframe>
-  </div>
-// //www.youtube.com/embed/${bodySearch.items[0].id.videoId}
-  );
+  else {
+    return (
+      <div>
+        <iframe className ="iframe" allowFullScreen="allowfullScreen"
+          mozallowfullscreen="mozallowfullscreen"
+          msallowfullscreen="msallowfullscreen"
+          oallowfullscreen="oallowfullscreen"
+          webkitallowfullscreen="webkitallowfullscreen" src={`${bodyId.bodyId}`}   >
+        </iframe>
+      </div>
+    );
+  }
 }
+
+function RenderStatisticsVideo(statisticsVideo) {
+  var {statisticsVideo} = statisticsVideo
+  if (statisticsVideo === "test") {
+    return <div></div>
+  }
+  else {
+    return (
+      <div>
+{`лайков - ${statisticsVideo.likeCount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.')}
+дизлайков - ${statisticsVideo.dislikeCount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.')}
+просмотров - ${(statisticsVideo.viewCount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.'))}`}
+      </div>
+    );
+  }
 }
+
+function RenderChannelTitle(bodySearch) {
+  var {bodySearch} = bodySearch
+  if (bodySearch === "test") {
+    return <div></div>
+  }
+  else {
+    return (
+      <div>
+{`Название канала - ${bodySearch.items[0].snippet.channelTitle}`}
+      </div>
+    );
+  }
+}
+
 export default class video extends Component {
-
-  
   render() {
-    const {  title ,idVideo , bodySearch} = this.props;
-
+    const { title, idVideo, statisticsVideo,bodySearch} = this.props;
     return (
       <div className="video">
-        {title} 
-   <RenderPlayer bodyId={idVideo}/>      </div>
+        {title}
+        <RenderPlayer bodyId={idVideo}/>
+        <RenderChannelTitle bodySearch={bodySearch}/>
+        <RenderStatisticsVideo statisticsVideo={statisticsVideo}/>
+      </div>
     )
   }
 }
