@@ -21,11 +21,15 @@
 .allsidebar {
     float: right;
     width: 30%;
+
+
 }
 
 .insidesidebar {
     padding: 10px 20px 10px 10px;
     display: flex;
+    margin: auto;
+    padding: 5px;
 }
 
 .cont3 {
@@ -85,4 +89,11 @@
 
 .text-side-bar {
     text-align: center;
+}
+
+.btnright {
+   float:right;
+}
+.btnleft {
+    float: left;
 }

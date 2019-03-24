@@ -5,7 +5,7 @@ export default class Comments extends Component {
   showAllComments = () => {
   }
   render() {
-    const { commentsData } = this.props;
+    const { commentsData, OnNextComments } = this.props;
     if (commentsData.length === 0 || commentsData.items === undefined) {
       return (
         <div className="comments">
@@ -22,6 +22,9 @@ export default class Comments extends Component {
           {items.map(({ snippet: { topLevelComment: { snippet: { authorDisplayName, textOriginal } } }, snippet }) =>
             <div key={snippet.topLevelComment.etag} className="text-comments card text-white bg-warning mb-3">
               <div>Автор {authorDisplayName} комментарий {textOriginal}</div></div>)}
+          <div className="text-comments card text-white bg-warning mb-3">
+            <button className="btn btn-warning" onClick={OnNextComments}>Next Comments</button>
+          </div>
         </div>
       )
     }
