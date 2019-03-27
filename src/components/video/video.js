@@ -6,8 +6,8 @@ function RenderPlayer(bodyId) {
   }
   else {
     return (
-      <div>
-        <iframe className ="iframe" allowFullScreen="allowfullScreen"
+            <div>
+        <iframe className ="ytplayer" allowFullScreen="allowfullScreen"
           mozallowfullscreen="mozallowfullscreen"
           msallowfullscreen="msallowfullscreen"
           oallowfullscreen="oallowfullscreen"
@@ -52,7 +52,7 @@ export default class video extends Component {
   render() {
     const { title, idVideo, statisticsVideo,bodySearch} = this.props;
     return (
-      <div className="video">
+      <div  className="player">
         {title}
         <RenderPlayer bodyId={idVideo}/>
         <RenderChannelTitle bodySearch={bodySearch}/>

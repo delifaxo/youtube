@@ -8,7 +8,7 @@ export default class Comments extends Component {
     const { commentsData, OnNextComments } = this.props;
     if (commentsData.length === 0 || commentsData.items === undefined) {
       return (
-        <div className="comments">
+        <div className="notcomments">
           Комментарии не доступны
         </div>
       )
@@ -16,14 +16,16 @@ export default class Comments extends Component {
     else {
       const { items } = commentsData;
       return (
-        <div className="comments">
+        <div>
           <div>
           </div>
           {items.map(({ snippet: { topLevelComment: { snippet: { authorDisplayName, textOriginal } } }, snippet }) =>
-            <div key={snippet.topLevelComment.etag} className="text-comments card text-white bg-warning mb-3">
-              <div>Автор {authorDisplayName} комментарий {textOriginal}</div></div>)}
-          <div className="text-comments card text-white bg-warning mb-3">
-            <button className="btn btn-warning" onClick={OnNextComments}>Next Comments</button>
+            <div key={snippet.topLevelComment.etag} className="comments-item-list text-comments card bg-light mb-3">
+              <div>Автор {authorDisplayName} комментарий {textOriginal}
+              </div></div>
+          )}
+          <div className="comments-item-list text-comments card bg-light mb-3">
+            <button className="btn" onClick={OnNextComments}>Next Comments</button>
           </div>
         </div>
       )

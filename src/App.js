@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './test.css';
-import './bs.css';
 import Search from './components/search/search';
 import Video from './components/video/video';
 import Videoside from './components/video-side/video-side';
@@ -145,30 +144,41 @@ class App extends Component {
 
   render() {
     return (
+
       <div className="App">
-        <Search
-          searchvideo={this.searchvideo} />
-        <div className="videosidebar">
-          <Videoside
-            idVideo={this.state.id}
-            OnPrevVideo={this.onPrevVideo}
-            OnNextVideo={this.onNextVideo}
-            onListPlay={this.onListPlay}
-            getResourse={this.getResourse}
-            urlYoutube={this.state.urlYoutube}
-            bodySearch={this.state.bodySearch} />
-        </div>
-        <div className="container-main">
-          <div className="cont3 card border-primary mb-3">
-            <Video
-              statisticsVideo={this.state.statisticsVideo}
-              title={this.state.title}
-              idVideo={this.state.id}
-              bodySearch={this.state.bodySearch} />
-            <Comments
-              OnNextComments={this.onNextComments}
-              commentsData={this.state.comments}
-              idVideo={this.state.id} />
+        <div className="top">
+          <Search
+            searchvideo={this.searchvideo} />
+
+
+          <div className="content">
+            <div className="row">
+              <div className="video col-lg-8">
+                <Video
+                  statisticsVideo={this.state.statisticsVideo}
+                  title={this.state.title}
+                  idVideo={this.state.id}
+                  bodySearch={this.state.bodySearch} />
+                <div className="comments">
+                  <Comments
+                    OnNextComments={this.onNextComments}
+                    commentsData={this.state.comments}
+                    idVideo={this.state.id} />
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="videoside">
+                  <Videoside
+                    idVideo={this.state.id}
+                    OnPrevVideo={this.onPrevVideo}
+                    OnNextVideo={this.onNextVideo}
+                    onListPlay={this.onListPlay}
+                    getResourse={this.getResourse}
+                    urlYoutube={this.state.urlYoutube}
+                    bodySearch={this.state.bodySearch} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
