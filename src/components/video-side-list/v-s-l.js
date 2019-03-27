@@ -18,7 +18,7 @@ export default class Videosidelist extends Component {
             //           else {
             return (
               <div key={`${id.videoId}`} onClick={onListPlay} name={`${id.videoId}`} className="card bg-light md-3">
-                <div>
+                <div name={`${id.videoId}`}>
                   <img className="video-side-img" name={`${id.videoId}`} src={`https://i.ytimg.com/vi/${id.videoId}/mqdefault.jpg`}></img>
                   <div  name={`${id.videoId}`} className="text-side-bar">{snippet.title}</div>
                 </div>
