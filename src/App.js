@@ -144,13 +144,10 @@ class App extends Component {
 
   render() {
     return (
-
       <div className="App">
         <div className="top">
           <Search
             searchvideo={this.searchvideo} />
-
-
           <div className="content">
             <div className="row">
               <div className="video col-lg-8">
