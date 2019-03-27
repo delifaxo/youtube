@@ -41,10 +41,8 @@ class App extends Component {
           currentSearch = currentSearch1;
           bodySearch = body;
           id = `${urlYoutube}${body.items[0].id.videoId}`
-
           return {
             id, bodySearch, currentSearch
-
           }
         })
       }).then(this.test10)
