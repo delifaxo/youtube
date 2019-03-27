@@ -18,7 +18,8 @@ class App extends Component {
       comments: [],
       bodySearch: "test",
       statisticsVideo: "test",
-      currentSearch: ""
+      currentSearch: "",
+      titleChannel:"test"
 
     };
   }
@@ -51,9 +52,10 @@ class App extends Component {
   showTitle = async (id = this.state.id.slice(24)) => {
     this.getResourse(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${Api2_key}`)
       .then((body) => {
-        this.setState(({ title }) => {
+        this.setState(({ title ,titleChannel}) => {
           return {
-            title: body.items[0].snippet.localized.title
+            title: body.items[0].snippet.localized.title,
+            titleChannel: body.items[0].snippet.channelTitle
           }
         })
       })
@@ -150,6 +152,7 @@ class App extends Component {
             <div className="row">
               <div className="video col-lg-8">
                 <Video
+                titleChannel = {this.state.titleChannel}
                   statisticsVideo={this.state.statisticsVideo}
                   title={this.state.title}
                   idVideo={this.state.id}

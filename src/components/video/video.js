@@ -34,28 +34,40 @@ function RenderStatisticsVideo(statisticsVideo) {
   }
 }
 
-function RenderChannelTitle(bodySearch) {
-  var { bodySearch } = bodySearch
-  if (bodySearch === "test") {
+function RenderChannelTitle(titleChannel) {
+  var { titleChannel } = titleChannel
+  if (titleChannel === "test") {
     return <div></div>
   }
   else {
     return (
       <div>
-        {`Название канала - ${bodySearch.items[0].snippet.channelTitle}`}
+        {`Название канала - ${titleChannel}`}
       </div>
     );
   }
 }
-
+function RenderTitle(title) {
+  var { title } = title
+  if (title === "") {
+    return <div></div>
+  }
+  else {
+    return (
+      <div>
+        {`Название видео - ${title}`}
+      </div>
+    );
+  }
+}
 export default class video extends Component {
   render() {
-    const { title, idVideo, statisticsVideo, bodySearch } = this.props;
+    const { title, idVideo, statisticsVideo,titleChannel } = this.props;
     return (
       <div className="player">
-        {title}
+        <RenderTitle title={title} />
         <RenderPlayer bodyId={idVideo} />
-        <RenderChannelTitle bodySearch={bodySearch} />
+        <RenderChannelTitle titleChannel={titleChannel} />
         <RenderStatisticsVideo statisticsVideo={statisticsVideo} />
       </div>
     )
