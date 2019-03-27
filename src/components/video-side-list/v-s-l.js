@@ -26,7 +26,7 @@ export default class Videosidelist extends Component {
             )
           }
             // }
-          )}     <div className="card bg-light md-3"></div>
+          )}    
           <div>
             <button className="btn bg-light btnrigth"  onClick={OnPrevVideo}>Prev video</button>  
             <button className="btn bg-light " onClick={OnNextVideo}>Next video</button>
