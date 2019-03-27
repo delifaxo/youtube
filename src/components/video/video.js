@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
 function RenderPlayer(bodyId) {
-   if (bodyId.bodyId === "test") {
+  if (bodyId.bodyId === "test") {
     return <div>Начните поиск</div>;
   }
   else {
     return (
-            <div>
-        <iframe className ="ytplayer" allowFullScreen="allowfullScreen"
+      <div>
+        <iframe className="ytplayer" allowFullScreen="allowfullScreen"
           mozallowfullscreen="mozallowfullscreen"
           msallowfullscreen="msallowfullscreen"
           oallowfullscreen="oallowfullscreen"
@@ -19,30 +19,30 @@ function RenderPlayer(bodyId) {
 }
 
 function RenderStatisticsVideo(statisticsVideo) {
-  var {statisticsVideo} = statisticsVideo
+  var { statisticsVideo } = statisticsVideo
   if (statisticsVideo === "test") {
     return <div></div>
   }
   else {
     return (
       <div>
-{`лайков - ${statisticsVideo.likeCount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.')}
-дизлайков - ${statisticsVideo.dislikeCount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.')}
-просмотров - ${(statisticsVideo.viewCount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.'))}`}
+        лайков -  {`${statisticsVideo.likeCount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.')}
+       дизлайков - ${statisticsVideo.dislikeCount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.')}`}<br></br>
+        {`просмотров - ${(statisticsVideo.viewCount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1.'))}`}
       </div>
     );
   }
 }
 
 function RenderChannelTitle(bodySearch) {
-  var {bodySearch} = bodySearch
+  var { bodySearch } = bodySearch
   if (bodySearch === "test") {
     return <div></div>
   }
   else {
     return (
       <div>
-{`Название канала - ${bodySearch.items[0].snippet.channelTitle}`}
+        {`Название канала - ${bodySearch.items[0].snippet.channelTitle}`}
       </div>
     );
   }
@@ -50,13 +50,13 @@ function RenderChannelTitle(bodySearch) {
 
 export default class video extends Component {
   render() {
-    const { title, idVideo, statisticsVideo,bodySearch} = this.props;
+    const { title, idVideo, statisticsVideo, bodySearch } = this.props;
     return (
-      <div  className="player">
+      <div className="player">
         {title}
-        <RenderPlayer bodyId={idVideo}/>
-        <RenderChannelTitle bodySearch={bodySearch}/>
-        <RenderStatisticsVideo statisticsVideo={statisticsVideo}/>
+        <RenderPlayer bodyId={idVideo} />
+        <RenderChannelTitle bodySearch={bodySearch} />
+        <RenderStatisticsVideo statisticsVideo={statisticsVideo} />
       </div>
     )
   }
